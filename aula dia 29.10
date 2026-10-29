@@ -1,0 +1,138 @@
+1-
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    char nome[50];
+    char perfil_input[20];
+    char perfil_formatado[30];
+    char nome_confirmacao[50];
+    char mensagem_boas_vindas[100] = "Bem-vindo(a), ";
+
+    printf("===== CADASTRO DE USUARIOS =====\n\n");
+    printf("Digite seu nome: ");
+    scanf("%49s", nome);
+
+    printf("Digite seu perfil: ");
+    scanf("%19s", perfil_input);
+
+   
+    size_t qtd_caracteres = strlen(nome);
+
+    
+    if (strcmp(perfil_input, "ADMIN") == 0) {
+        strcpy(perfil_formatado, "Administrador");
+    } else if (strcmp(perfil_input, "COMUM") == 0) {
+        strcpy(perfil_formatado, "Comum");
+    } else {
+        strcpy(perfil_formatado, "Perfil Indefinido");
+    }
+
+   
+    strcpy(nome_confirmacao, nome);
+
+   
+    strcat(mensagem_boas_vindas, nome_confirmacao);
+    strcat(mensagem_boas_vindas, "!");
+
+  
+    printf("\n===== DADOS CADASTRADOS =====\n");
+    printf("Nome: %s\n", nome_confirmacao);
+    printf("Quantidade de caracteres: %zu\n", qtd_caracteres);
+    printf("Perfil: %s\n\n", perfil_formatado);
+    printf("%s\n", mensagem_boas_vindas);
+    printf("Cadastro realizado com sucesso.\n");
+
+    return 0;}
+
+
+2-
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    char nome_produto[50];
+    char categoria_input[30];
+    char categoria_formatada[30];
+    char produto_copia[50];
+    char descricao[100] = "Produto: ";
+
+    printf("===== CADASTRO DE PRODUTOS =====\n\n");
+    printf("Nome do produto: ");
+    scanf("%49s", nome_produto);
+
+    printf("Categoria: ");
+    scanf("%29s", categoria_input);
+
+  
+    size_t qtd_caracteres = strlen(nome_produto);
+
+    if (strcmp(categoria_input, "HARDWARE") == 0) {
+        strcpy(categoria_formatada, "Hardware");
+    } else if (strcmp(categoria_input, "PERIFERICO") == 0) {
+        strcpy(categoria_formatada, "Periferico");
+    } else {
+        strcpy(categoria_formatada, "Outro");
+    }
+
+    
+    strcpy(produto_copia, nome_produto);
+
+
+    strcat(descricao, produto_copia);
+
+  
+    printf("\n===== RESUMO =====\n");
+    printf("Produto: %s\n", produto_copia);
+    printf("Caracteres: %zu\n", qtd_caracteres);
+    printf("Categoria: %s\n\n", categoria_formatada);
+    printf("Descricao: %s\n", descricao);
+    printf("Cadastro concluido!\n");
+
+    return 0;}
+
+
+3-
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    char nome_estudante[50];
+    char codigo_curso[10];
+    char nome_curso[50];
+    char nome_copia[50];
+    char mensagem_ola[100] = "Ola, ";
+
+    printf("===== IDENTIFICACAO ACADEMICA =====\n\n");
+    printf("Nome do estudante: ");
+    scanf("%49s", nome_estudante);
+
+    printf("Codigo do curso: ");
+    scanf("%9s", codigo_curso);
+
+    if (strcmp(codigo_curso, "CC") == 0) {
+        strcpy(nome_curso, "Ciencia da Computacao");
+    } else if (strcmp(codigo_curso, "SI") == 0) {
+        strcpy(nome_curso, "Sistemas de Informacao");
+    } else {
+        strcpy(nome_curso, "Curso Nao Encontrado");
+    }
+
+   
+    size_t qtd_caracteres = strlen(nome_estudante);
+
+   
+    strcpy(nome_copia, nome_estudante);
+
+
+    strcat(mensagem_ola, nome_copia);
+    strcat(mensagem_ola, "!");
+
+
+    printf("\n===== RESULTADO =====\n");
+    printf("Estudante: %s\n", nome_copia);
+    printf("Curso: %s\n", nome_curso);
+    printf("Caracteres no nome: %zu\n\n", qtd_caracteres);
+    printf("%s\n", mensagem_ola);
+
+    return 0;}
