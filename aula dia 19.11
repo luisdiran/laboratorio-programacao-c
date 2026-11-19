@@ -1,0 +1,79 @@
+1)
+#include <stdio.h>
+
+int main() {
+    int numero;
+
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &numero);
+
+    printf("Valor: %d\n", numero);
+    printf("Endereco de memoria: %p\n", (void*)&numero);
+
+    return 0;
+}
+
+2)
+#include <stdio.h>
+
+int main() {
+    int valor = 20;
+    int *ponteiro = &valor;
+
+    printf("Valor da variavel: %d\n", valor);
+    printf("Endereco da variavel: %p\n", (void*)ponteiro);
+    printf("Valor acessado pelo ponteiro: %d\n", *ponteiro);
+
+    return 0;
+}
+
+3)
+#include <stdio.h>
+
+int main() {
+    int numero = 15;
+    int *ponteiro = &numero;
+
+    printf("Valor antes da alteracao: %d\n", numero);
+
+    *ponteiro = 50;
+
+    printf("Valor depois da alteracao: %d\n", numero);
+
+    return 0;
+}
+
+4)
+#include <stdio.h>
+
+void dobrar(int *n) {
+    *n = (*n) * 2;
+}
+
+int main() {
+    int numero;
+
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &numero);
+
+    dobrar(&numero);
+
+    printf("Resultado dobrado: %d\n", numero);
+
+    return 0;
+}
+
+5)
+#include <stdio.h>
+
+int main() {
+    int vetor[5] = {10, 20, 30, 40, 50};
+    int *ponteiro = vetor;
+
+    printf("Elementos do vetor:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Posicao %d: %d\n", i, *(ponteiro + i));
+    }
+
+    return 0;
+}
