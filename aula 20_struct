@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+typedef struct {
+    char nome[50];
+    int idade;
+    float salario;
+} Funcionario;
+
+int main(void) {
+    
+    Funcionario funcionario1, funcionario2;
+    float diferenca;
+    
+    
+    printf("===== CADASTRANDO FUNCIONÁRIOS =====\n\n");
+    
+    printf("Dados funcionário 1:");
+    printf("\nNome: ");
+    scanf(" %49[^\n]", funcionario1.nome);
+    printf("Idade: ");
+    scanf("%d", &funcionario1.idade);
+    printf("Salário: ");
+    scanf("%f", &funcionario1.salario);
+    printf("\nDados funcionário 2:");
+    printf("\nNome: ");
+    scanf(" %49[^\n]", funcionario2.nome);
+    printf("Idade: ");
+    scanf("%d", &funcionario2.idade);
+    printf("Salário: ");
+    scanf("%f", &funcionario2.salario);
+    
+    printf("\n\n===== DADOS CADASTRADOS =====\n\n");
+    printf("Nome funcionário 1: %s\n", funcionario1.nome);
+    printf("Idade funcionário 1: %d\n", funcionario1.idade);
+    printf("Salário funcionário 1: %.2f\n", funcionario1.salario);
+    printf("\nNome funcionário 2: %s\n", funcionario2.nome);
+    printf("Idade funcionário 2: %d\n", funcionario2.idade);
+    printf("Salário funcionário 2: %.2f\n", funcionario2.salario);
+    
+    if (funcionario1.salario > funcionario2.salario) {
+        printf("O funcionário 1 possui um maior salário que é de R$%.2f.\n", funcionario1.salario);
+        diferenca = funcionario1.salario - funcionario2.salario;
+        printf("Diferença salarial: R$%.2f.\n", diferenca);
+    }
+    else if (funcionario2.salario > funcionario1.salario) {
+        printf("O funcionário 2 possui um maior salário que é de R$%.2f.\n", funcionario2.salario);
+        diferenca = funcionario2.salario - funcionario1.salario;
+        printf("Diferença salarial: R$%.2f.\n", diferenca);
+    }
+    else {
+        printf("Os salários são iguais.");
+    }
+    
+    return 0;
+}    
